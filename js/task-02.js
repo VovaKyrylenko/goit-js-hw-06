@@ -9,11 +9,9 @@ const ingredients = [
 
 const parent = document.querySelector("#ingredients");
 let list = "";
-for (const iterator of ingredients) {
+ingredients.forEach((ingredient) => {
   let li = document.createElement("li");
   li.className = "item";
-  li.innerHTML = iterator;
-  list += li.outerHTML;
-}
-
-parent.innerHTML = list;
+  li.innerHTML = ingredient;
+  parent.appendChild(li);
+});

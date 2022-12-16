@@ -14,10 +14,12 @@ const images = [
 ];
 
 const parent = document.querySelector(".gallery");
-let list = "";
-for (const iterator of images) {
-  const li = `<li"><img src="${iterator.url}" alt="${iterator.alt}" style="max-width: 100%;"></li>`;
-  list += li;
-}
-
-parent.insertAdjacentHTML("afterbegin", list);
+images.forEach((image) => {
+  let li = document.createElement("li");
+  let img = document.createElement("img");
+  img.src = image.url;
+  img.alt = image.alt;
+  img.style = "max-width: 100%";
+  li.appendChild(img);
+  parent.appendChild(li);
+});

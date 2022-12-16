@@ -3,8 +3,9 @@ function getRandomHexColor() {
 }
 
 const button = document.querySelector(".change-color");
-const widget = document.querySelector(".widget");
+const body = document.querySelector("body");
 button.addEventListener("click", () => {
-  widget.style.background = getRandomHexColor();
-  document.querySelector(".color").innerHTML = getRandomHexColor();
+  const color = getRandomHexColor();
+  body.style.background = color;
+  document.querySelector(".color").innerHTML = color;
 });

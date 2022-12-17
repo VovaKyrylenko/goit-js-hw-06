@@ -10,8 +10,6 @@ const ingredients = [
 const parent = document.querySelector("#ingredients");
 let list = "";
 ingredients.forEach((ingredient) => {
-  let li = document.createElement("li");
-  li.className = "item";
-  li.innerHTML = ingredient;
-  parent.appendChild(li);
+  list += `<li class="item">${ingredient}</li>`;
 });
+parent.innerHTML = list;

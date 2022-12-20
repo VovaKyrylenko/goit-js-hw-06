@@ -8,8 +8,10 @@ const ingredients = [
 ];
 
 const parent = document.querySelector("#ingredients");
-let list = "";
+let list = [];
 ingredients.forEach((ingredient) => {
-  list += `<li class="item">${ingredient}</li>`;
+  const element = document.createElement("li");
+  element.innerHTML = ingredient;
+  list.push(element);
 });
-parent.innerHTML = list;
+parent.append(...list);

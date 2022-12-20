@@ -14,12 +14,8 @@ const images = [
 ];
 
 const parent = document.querySelector(".gallery");
+let string = "";
 images.forEach((image) => {
-  let li = document.createElement("li");
-  let img = document.createElement("img");
-  img.src = image.url;
-  img.alt = image.alt;
-  img.style = "max-width: 100%";
-  li.appendChild(img);
-  parent.appendChild(li);
+  string += `<li><img src=${image.url} alt=${image.alt} style="max-width: 100%"></li>`;
 });
+parent.insertAdjacentHTML("beforeend", string);

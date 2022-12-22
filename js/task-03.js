@@ -18,4 +18,5 @@ let string = "";
 images.forEach((image) => {
   string += `<li><img src=${image.url} alt=${image.alt} style="max-width: 100%"></li>`;
 });
+console.log("string:", string);
 parent.insertAdjacentHTML("beforeend", string);
